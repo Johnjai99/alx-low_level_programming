@@ -10,7 +10,7 @@ int main(void)
 	long int n, i;
 
 	n = 612852475143;
-	for (i = 2; i <= n; fp++)
+	for (i = 2; i <= n; i++)
 	{
 		if (n % i == 0)
 		{
