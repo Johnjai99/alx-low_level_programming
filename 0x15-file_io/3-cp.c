@@ -2,7 +2,6 @@
 
 #define MAXSIZE 1024
 
-
 /**
  * __exit - prints error messages and exits with exit number
  *
@@ -11,25 +10,25 @@
  * @fd: file descriptor
  *
  * Return: 0 on success
-*/
+ */
 int __exit(int error, char *str, int fd)
 {
 	switch (error)
 	{
-		case 97:
-			dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-			exit(error);
-		case 98:
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", s);
-			exit(error);
-		case 99:
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", s);
-			exit(error);
-		case 100:
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-			exit(error);
-		default:
-			return (0);
+	case 97:
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(error);
+	case 98:
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", str);
+		exit(error);
+	case 99:
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", str);
+		exit(error);
+	case 100:
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(error);
+	default:
+		return (0);
 	}
 }
 
@@ -40,7 +39,7 @@ int __exit(int error, char *str, int fd)
  * @argv: argument vector
  *
  * Return: 0 for success.
-*/
+ */
 int main(int argc, char *argv[])
 {
 	int file_in, file_out;
